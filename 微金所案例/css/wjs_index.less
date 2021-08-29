@@ -1,0 +1,353 @@
+// 定义变量
+@baseColor:#e92322;
+
+// 头部样式
+.wjs_header{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #ccc;
+    .row{
+        height: 100%;
+        text-align: center;
+        > div:nth-of-type(-n+3){
+            border-right: 1px solid #ccc;
+            >.wjs_code{
+                position: relative;
+                display: block;
+                >img{
+                    display: none;
+                    position: absolute;
+                    top: 49px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border: 1px solid #ccc;
+                    border-top: none;
+                    z-index: 999;
+                }
+                // &表示的是同一个元素的伪元素或者嵌套的上一级
+                &:hover{
+                    >img{
+                        display: block;
+                    }
+                }
+            }
+        }
+        >div:nth-last-of-type(1){
+            >.btn-danger{
+                background-color: @baseColor;
+                border-color: @baseColor;
+            }
+            >.btn{
+                padding: 3px 15px;
+            }
+            >.btn-link{
+                color: #333;
+                &:hover{
+                    // 没有文本装饰
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+// 导航条部分
+.wjs_nav{
+    .navbar-brand{
+        height: 80px;
+        line-height: 50px;
+        >.wjs_icon{
+            font-size: 40px;
+        }
+        > span:first-of-type{
+            color: @baseColor;
+        }
+        > span:last-of-type{
+            color: #333;
+        }
+    }
+    // 修改导航项的样式
+    .navbar-nav{
+        >li{
+            >a{
+                line-height: 50px;
+                font-size: 16px;
+            }
+            > a:hover,a:focus{
+                color: #777;
+                border-bottom: 3px solid @baseColor ;           }
+        }
+
+    }
+}
+//轮播图模块样式
+.wjs_banner{
+}
+
+//信息块样式
+.wjs_info{
+    padding: 30px;
+    >.wjs_icon{
+        font-size: 30px;
+    }
+    .row{
+        >div{
+            margin-top: 20px;
+            >a:hover{
+                color: @baseColor;
+            }
+        }
+    }
+}
+//立即预约模块样式
+.wjs_reverse{
+    height: 60px;
+    line-height: 60px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    .wjs_icon{
+        font-size: 18px;
+    }
+    .reverse_now{
+        color: @baseColor;
+        border-bottom: 1px dashed @baseColor;
+    }
+    a:hover{
+        color: @baseColor;
+    }
+}
+
+//产品块样式
+.wjs_product{
+    clear: both;
+    background-color: #eee;
+    padding: 20px;
+    .tabs_parent{
+        width: 100%;
+        overflow: hidden;
+    }
+    .nav-tabs{
+        >li{
+            margin-bottom: 0px;
+            padding: 0px 15px;
+            >a{
+                line-height: 50px;
+                border-radius: 0px;
+                border:none;
+                background-color: transparent;
+            }
+            >a:hover{
+                border-bottom: 3px solid @baseColor;
+            }
+            &active{
+                >a,a:hover,a:focus{
+                    border:none;
+                    border-radius: 0;
+                    background-color: #eee;
+                    border-bottom: 3px solid @baseColor;
+                }
+            }
+        }
+    }
+    //产品详细信息样式
+    .wjs_pBox{
+        height: 150px;
+        margin-top: 20px;
+        background-color: #fff;
+        .wjs_pLeft{
+            margin-right: 100px;
+            height: 150px;
+            padding-top: 10px;
+            font-size: 12px;
+            >p{
+                width: 100%;
+                text-align: center;
+                font-size: 16px;
+            }
+            .row{
+                margin-left: -10px;
+                margin-right: -10px;
+                >div:nth-of-type(even){
+                    text-align: right;
+                }
+            }
+        }
+        .wjs_pRight{
+            width: 100px;
+            height: 150px;
+            position: absolute;
+            right: 15px;
+            top:20px;
+            border-left: 1px dashed #ccc;
+            text-align: center;
+            padding-top: 30px;
+            >.wjs_tip{
+                width: 100%;
+                position: absolute;
+                left: 50%;
+                top: 20px;
+                transform: translateX(-50%);
+                >span{
+                    //光标呈现为指示链接的指针（一只手）
+                    cursor: pointer;
+                }
+                >span:first-of-type{
+                    color: red;
+                    border: 1px solid red;
+                }
+                >span:last-of-type{
+                    color: blue;
+                    border:1px solid blue;
+                }
+            }
+            >b{
+                font-size: 40px;
+                color: @baseColor;
+            }
+            >sub{
+                color: @baseColor;
+                bottom: 0;
+            }
+            &::after,&::before{
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #eee;
+                position: absolute;
+                left: -5px;
+            }
+            &::before{
+                top: -5px;
+                box-shadow: 0px -1px 1px #ddd;
+            }
+            &::after{
+                bottom: -5px;
+                box-shadow: 0px -1px 1px #ddd;
+            }
+        }
+        &.active{
+            background-color: @baseColor;
+            >.wjs_pRight{
+                >b,sub,p{
+                    color: #fff;
+                }
+            }
+            >.wjs_pLeft{
+                color: #fff;
+                position: relative;
+                // 使用伪元素添加左上角的标志
+                &::before{
+                    content: "\e915";
+                    font-family: "wjs";
+                    position: absolute;
+                    left: 0;
+                    top: -5px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+//新闻块样式
+.wjs_news{
+    padding: 20px;
+    .wjs_nTitle{
+        line-height: 50px;
+        font-size: 25px;
+        border-bottom: 1px solid #ccc;
+        text-align: center;
+        position: relative;
+        &::before{
+            content: "";
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            position: absolute;
+            bottom: -4px;
+            right: -8px;
+        }
+    }
+    .wjs_newsLine{
+        width: 1px;
+        height: 100%;
+        position: absolute;
+        border-left: 1px dashed @baseColor;
+        left: 45px;
+        top: 0;
+    }
+    .nav-tabs{
+        border-bottom: none;
+        position: relative;
+        //使用媒体查询设置W在168~992之间的li元素的样式
+    >li{
+        margin-bottom: 60px;
+        >a{
+            background-color: #ccc;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border:none;
+        }
+        >a:hover{
+            border:none;
+            background-color: @baseColor;
+        }
+        &.active{
+            >a,a:hover,a:focus{
+                border:none;
+                background-color: @baseColor;
+            }
+        }
+        .wjs_icon{
+            font-size: 30px;
+            color: #fff;
+        }
+    }
+    >li:last-of-type{
+        margin-bottom: 0px;
+    }
+    //使用媒体查询设置W在168~992之间的li元素的样式
+    @media screen and (min-width: 768px) and (max-width: 992px){
+        >li{
+            margin: 20px 30px;
+        }
+    }
+    //使用媒体查询设置w<768时li元素的样式
+    @media screen and(max-width: 768px) {
+        >li{
+            margin: 20px 0px;
+            width: 25%;
+        }
+    }
+}
+/*新闻列表样式*/
+ .wjs_newslist{
+    list-style: none;
+    > li {
+      line-height:60px;
+    }
+  }
+}
+
+//合作伙伴模块样式
+.wjs_partner{
+    background-color: #eee;
+    padding: 20px;
+    text-align: center;
+    h3{
+        width: 100%;
+        text-align: center;
+    }
+    ul{
+        list-style: none;
+        display: inline-block;
+        >li{
+            float: left;
+            margin-left: 20px;
+        }
+    }
+    .wjs_icon{
+        font-size: 80px;
+    }
+}
