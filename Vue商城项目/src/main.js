@@ -25,11 +25,21 @@ import './lib/mui/css/mui.min.css'
 // 导入MUI的扩展图标样式包
 // import './lib/mui/css/icons-extra.css'
 
+// 导入mock数据
+import HomeData  from './mock/HomeData'
+import MemberData  from './mock/MemberData'
+import SearchData from './mock/SearchData'
+import ShopcarData  from './mock/ShopcarData'
+
 //导入App组件
 import app from './App.vue'
 
 var vm = new Vue({
   el:'#app',
   render:c => c(app),
-  router  //1.4挂载路由对象到vm实例上
+  router, //1.4挂载路由对象到vm实例上
+  HomeData,
+  MemberData,
+  SearchData,
+  ShopcarData
 })
