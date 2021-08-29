@@ -1,0 +1,50 @@
+/* 设置公共样式 */
+html,body,ul,li,img,a,p,div,form,input{
+    padding: 0;
+    margin: 0;
+    /* 设置盒模型，设置padding和margin不会撑开盒子，盒子大小不会改变 */
+    box-sizing: border-box;
+    /* 取消移动端中a标签的默认的点击背景 */
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+    /* 如果微软雅黑字体不能使用，就用默认的sans-serif字体 */
+    font-family: "微软雅黑",sans-serif;
+    font-size: 13px;
+}
+a,
+a:hover{
+    color: #666;
+    /* 清除默认下划线 */
+    text-decoration: none;
+}
+ul{
+    /* 清除默认小圆点 */
+    list-style: none;
+}
+input{
+    /* 1、清除文本框获取焦点时默认的边框阴影 */
+    outline: none;
+    /* 2、去除边框 */
+    border: none;
+    /* 3、添加边框 */
+    border: 1px solid #ccc;
+}
+/* 清除浮动，固定写法，其中【伪元素使用::,伪类使用: 】 */
+.clearfix::before，
+.clearfix::after{
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    /* 左右两侧均不允许浮动元素 */
+    clear: both;
+    /* 指定一个元素是否是可见的 */
+    visibility: hidden;
+}
+.f_left{
+    float: left;
+}
+.f_right{
+    float: right;
+}

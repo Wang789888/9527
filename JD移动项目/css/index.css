@@ -1,0 +1,175 @@
+.bigBox{
+    width: 100%;
+    height: 1000px;
+    max-width: 640px;
+    min-width: 320px;
+    background-color: #eee;
+    margin: 0 auto;
+}
+
+/* 搜索栏部分 */
+.jd_top{
+    width: 100%;
+    height:40px;
+    /* background-color: blueviolet; */
+    position: fixed;
+    z-index: 999;
+}
+.jd_logo{
+    width: 56px;
+    height: 30px;
+    background: url(../images/jd-sprites.png) ;
+    background-position: 0px 95px;
+    background-size: 200px 200px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+.jd_search{
+    width: 100%;
+    height: 100%;
+    padding-left: 76px;
+    padding-right: 50px;
+}
+.jd_search > input{
+    width: 100%;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #fff;
+    padding-left: 30px;
+    margin-top: 5px;
+}
+.jd_search::before{
+    content: "";
+    width: 27px;
+    height: 23px;
+    position: absolute;
+    left: 80px;
+    top: 9px;
+    background: url(../images/jd-sprites.png);
+    background-size: 200px 200px;
+    background-position: -56px -108px;
+}
+.jd_login{
+    width: 40px;
+    line-height: 40px;
+    right: 10px;
+    top: 0;
+    right: 0;
+    color: #fff;
+    position: absolute;
+}
+
+/* 轮播图部分 */
+.jd_banner{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    /* visibility: hidden; */
+}
+.bImg{
+    /* width: 300%; */
+    /* 如果使用absolute定位，会造成父容器无法获取由子元素的撑开的高度 */
+    /* position: absolute;   */
+    position: relative;
+
+}
+.bImg > li{
+    width: 100%;
+    float: left;
+    position: relative;
+}
+.bImg img{
+    width: 100%;
+    /* 转换为块级元素，默认情况下自动填满父级元素 */
+    display: block;
+}
+
+
+/* 导航栏部分 */
+.jd_nav{
+    width: 100%;
+    padding: 10px 0;
+    /* height: 200px; */
+    background-color: #fff;
+}
+.jd_nav{
+    overflow: hidden;
+}
+.jd_nav li{
+    width: 25%;
+    float: left;
+    /* 文本居中 */
+    text-align: center;
+    margin-top: 5px;
+}
+.jd_nav li img{
+    width: 50px;
+}
+.jd_nav li p{
+    line-height: 50px;
+}
+
+/* 京东商城部分 */
+.jd_product{
+    width: 100%;
+    position: relative;
+}
+.goods{
+    width: 100%;
+    margin-top: 5px;
+    background-color: #fff;
+    overflow: hidden;
+}
+.jd_title{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px solid #ccc;
+    color: #666;
+}
+.jd_title h3{
+    padding-left: 20px;
+    position: relative;
+}
+.good>img{
+    width: 100%;
+    display: block;
+}
+.good{
+    width: 50%;
+    float: left;
+    display: block;
+}
+.g_bottom{
+    border-bottom: 1px solid #ccc;
+}
+.g_left{
+    border-left: 1px solid #ccc;
+}
+
+.jd_saleC ul{
+    padding: 20px;
+}
+.jd_saleC li{
+    width: 33.33%;
+    text-align: center;
+    float: left;
+}
+.jd_saleC li img{
+    width: 60%;
+    /* 转换为行内块元素 */
+    display: inline-block;
+}
+.jd_saleIcon{
+    width: 16px;
+    height: 20px;
+    background: url("../images/seckill-icon.png");
+    background-size: 16px 20px;
+    margin-top:3px;
+}
+.jd_saleMore{
+    float: right;
+    right: 0;
+    padding-right: 20px;
+}
