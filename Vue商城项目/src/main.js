@@ -42,6 +42,106 @@ import MemberData  from './mock/MemberData'
 import SearchData from './mock/SearchData'
 import ShopcarData  from './mock/ShopcarData'
 
+// 到入vuex
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+//每次刚进入网站，肯定会调用main.js,在刚调用时，先从本地存储中，把购物车的数据读出来，放到store中
+var car = JSON.parse(localStorage.getItem('car') || '[]')
+var store = new Vuex.Store({
+  // this.$store.state 来获取状态对象，以及通过 this.$store.commit 方法触发状态变更
+  state:{ 
+    car: car //购物车数据仓库
+  },
+  mutations:{ 
+    // 点击购物车，把商品信息保存store中car上
+    addToCar(state,goodsinfo){
+
+      var flag = false
+
+      state.car.some(item=>{
+        if(item.id == goodsinfo.id){
+          item.count += parseInt(goodsinfo.count)
+          flag = true
+          return true
+        }
+      })
+      // 如果最终循环完毕得到flag 还是false,则把商品数据直接push到购物车中
+      if(!flag){
+        state.car.push(goodsinfo)
+      }
+      // 当更新car的时候，把car数组，存储到本地的localStorage中
+      localStorage.setItem('car',JSON.stringify(state.car))
+    },
+    updateGoodsInfo(state,goodsinfo){
+      // 修改购物车中商品的数量值
+      state.car.some(item =>{
+        if(item.id == goodsinfo.id){
+          item.count = parseInt(goodsinfo.count)
+          return true
+        }
+      })
+      
+       localStorage.setItem('car',JSON.stringify(state.car))
+    },
+    removeFormCar(state,id){
+      // 根据id，从store中的购物车中删除对应的商品数据
+      state.car.some((item,i) =>{
+        if (item.id == id) {
+          state.car.splice(i , 1);
+          return true;
+        }
+      })
+      localStorage.setItem('car',JSON.stringify(state.car))
+    },
+    updataGoodsSelected(state,info){
+      state.car.some(item =>{
+        if(item.id == info.id){
+          item.selected = info.selected
+        }
+      })
+      localStorage.setItem('car',JSON.stringify(state.car))
+    }
+  },
+  getters:{
+    // 相当于计算属性
+    getAllCount(state){
+      var c = 0;
+      state.car.forEach(item =>{
+        c += item.count
+      })
+      return c
+    },
+    getGoodsCount(state){
+      var o = {}
+      state.car.forEach(item =>{
+        o[item.id] = item.count
+      })
+      return o
+    },
+    getGoodsSelected(state){
+      var o = {}
+      state.car.forEach(item =>{
+        o[item.id] = item.selected
+      })
+      return 0
+    },
+    getGoodsCountAndAmount(state){
+      var o ={
+        count:0,
+        amount:0
+      }
+      state.car.forEach(item =>{
+        if(item.selected){
+          o.count += item.count
+          o.count += item.price + item.count
+        }
+      })
+      return o
+    }
+  }
+})
+
 //导入App组件
 import app from './App.vue'
 
@@ -58,5 +158,6 @@ var vm = new Vue({
   HomeData,
   MemberData,
   SearchData,
-  ShopcarData
+  ShopcarData,
+  store
 })

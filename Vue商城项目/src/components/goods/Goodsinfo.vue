@@ -1,12 +1,12 @@
 <template>
   <div class="goodsinfo-container">
 
-    <!-- <transition
+    <transition
       @before-enter="beforeEnter"
       @enter="enter"
       @after-enter="afterEnter">
       <div class="ball" v-show="ballFlag" ref="ball"></div>
-    </transition> -->
+    </transition>
     
     <!-- 商品轮播图区域 -->
     <div class="mui-card">
@@ -65,7 +65,7 @@
 // 导入轮播图组件
 import swiper from "../subcomponent/swiper.vue";
 // 导入 数字选择框 组件
-// import numbox from "../subcomponent/goodsinfo_numbox.vue";
+import numbox from "../subcomponent/goodsinfo_numbox.vue";
 
 export default {
   data() {
@@ -106,17 +106,59 @@ export default {
     },
     goComment(id){
       this.$router.push({name:'goodscomment',params: {id}})
+    },
+    addToShopCar(){
+      // 添加到购物车
+      this.ballFlag =!this.ballFlag 
+
+      //拼接出一个要保存到store种car数组里的商品信息对象
+      var goodsinfo = {
+        id: this.id, 
+        count: this.selectedCount,
+        price: this.goodsinfo.sell_price,
+        select: true
+      };
+      // 调用store中的mutation来将商品加入购物车
+      this.$store.commit('addToCar',goodsinfo)
+      
+    },
+    // 动画中钩子函数的设置
+    beforeEnter(el){
+      el.style.transfrom = "translate(0,0)";
+    },
+    // 小球动画优化思路：
+    // 1. 先分析导致 动画 不准确的 本质原因： 我们把 小球 最终 位移到的 位置，已经局限在了某一分辨率下的 滚动条未滚动的情况下；
+    // 2. 只要分辨率和 测试的时候不一样，或者 滚动条有一定的滚动距离之后， 问题就出现了；
+    // 3. 因此，我们经过分析，得到结论： 不能把 位置的 横纵坐标 直接写死了，而是应该 根据不同情况，动态计算这个坐标值；
+    // 4. 经过分析，得出解题思路： 先得到 徽标的 横纵 坐标，再得到 小球的 横纵坐标，然后 让 y 值 求差， x 值也求 差，得到 的结果，就是横纵坐标要位移的距离
+    // 5. 如何 获取 徽标和小球的 位置？？？   domObject.getBoundingClientRect()
+    enter(el,done){
+      el.offsetwidth;
+      // 获取小球在页面上的位置
+      const ballPosition = this.$refs.ball.getBoundingClientRect();
+      // 获取徽标在页面上的位置
+      const badgePosition = document.getElementById("badge").getBoundingClientRect();
+      
+      const xDist = badgePosition.left - ballPosition.left
+      const yDist = badgePosition.top - ballPosition.top
+      
+      el.style.transfrom = 'translate( ${xDist}px , ${yDist}px)';
+      el.style,transition = " all 0.5s cubic-bezier(.17,.67,.83,.67)"
+    },
+    afterEnter(el){
+      this.ballFlag = !this.ballFlag;
+    },
+    getSelectedCount(count){
+      // 当子组件把选中的数量传递给父组件的时候，把选中的值保存到data上
+      this.selectedCount = count 
+      console.log(this.selectedCount)
     }
 
-      // 小球动画优化思路：
-      // 1. 先分析导致 动画 不准确的 本质原因： 我们把 小球 最终 位移到的 位置，已经局限在了某一分辨率下的 滚动条未滚动的情况下；
-      // 2. 只要分辨率和 测试的时候不一样，或者 滚动条有一定的滚动距离之后， 问题就出现了；
-      // 3. 因此，我们经过分析，得到结论： 不能把 位置的 横纵坐标 直接写死了，而是应该 根据不同情况，动态计算这个坐标值；
-      // 4. 经过分析，得出解题思路： 先得到 徽标的 横纵 坐标，再得到 小球的 横纵坐标，然后 让 y 值 求差， x 值也求 差，得到 的结果，就是横纵坐标要位移的距离
-      // 5. 如何 获取 徽标和小球的 位置？？？   domObject.getBoundingClientRect()
+     
   },
   components:{
-    swiper
+    swiper,
+    numbox
   }
 }
 </script>
@@ -137,7 +179,6 @@ export default {
       margin: 15px 0;
     }
   }
-
   .ball {
     width: 15px;
     height: 15px;
