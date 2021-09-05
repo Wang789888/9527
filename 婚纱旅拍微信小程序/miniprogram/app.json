@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/theme/theme",
+    "pages/category/category",
+    "pages/product/product",
+    "pages/order/order",
+    "pages/my/my",
+    "pages/about/about"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "一生旅拍",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7F8389",
+    "selectedColor": "#FF6200",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabBar/home.png",
+        "selectedIconPath": "images/tabBar/home@select.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "iconPath": "images/tabBar/category.png",
+        "selectedIconPath": "images/tabBar/category@select.png",
+        "text": "客片"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "iconPath": "images/tabBar/hunshasheying1.png",
+        "selectedIconPath": "images/tabBar/hunshasheying.png",
+        "text": "关于我们"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/tabBar/my.png",
+        "selectedIconPath": "images/tabBar/my@select.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

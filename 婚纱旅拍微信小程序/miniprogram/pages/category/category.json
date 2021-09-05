@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "客片预览",
+  "usingComponents": {
+    "category-comp": "/components/product-category/index"
+  }
+}

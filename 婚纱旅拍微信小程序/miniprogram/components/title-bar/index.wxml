@@ -1,0 +1,5 @@
+<view class='container'>
+  <view class='line'></view>
+  <text class='text11'>{{title}}</text>
+  <text class='stext'>{{stitle}}</text>
+</view>

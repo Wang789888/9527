@@ -1,0 +1,23 @@
+/* components/category/index.wxss */
+.container{
+  /* display: inline-flex; */
+
+  flex-flow: column;
+  align-items: center;
+  width:180rpx;  
+  margin-top: 20rpx;
+  margin-left: 18rpx;
+}
+.product-img image{
+  /* width:590rpx;
+  height:500rpx; */
+  background:rgba(255,255,255,1);
+  border-radius:10rpx;
+}
+.product-name{
+  width: 150rpx;
+  font-size:22rpx;
+  font-weight:400;
+  color:#838383;
+  text-align: center;
+}

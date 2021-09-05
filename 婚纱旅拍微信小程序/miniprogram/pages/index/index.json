@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "title-bar-comp": "/components/title-bar/index",
+    "product-cloumn-comp": "/components/product-column/index"
+  }
+}

@@ -1,0 +1,31 @@
+<!--pages/about/about.wxml-->
+<view class="main">
+  <image class="banner" src="cloud://biyesheji-dtsea.6269-biyesheji-dtsea-1300712182/banner/zhutu.png"></image>
+  <view class="block-title" style="color:black">联系我们</view>
+
+  <view class="mcname">一生旅拍</view>
+  <view class="mcinfo" bindtap="teltoUs">
+    <text class="mctlt">联系电话：</text>
+    <text class="mcval">183-929-72275（点击拨号）</text>
+  </view>
+  <view class="mcinfo" open-type="contact">
+    <text class="mctlt">联系微信：</text>
+    <text class="mcval">一生旅拍</text>
+  </view>
+  <view class="mcinfo">
+    <text class="mctlt">联系邮箱：</text>
+    <text class="mcval">一生旅拍@163.com</text>
+  </view>
+  <view class="mcinfo" bindtap="click">
+    <text class="mctlt">联系地址：</text>
+    <text class="mcval">陕西省西安市(点击导航）</text>
+  </view>
+
+</view>
+
+<view class="goods-box">
+  <button class="goods-operation" open-type="contact">在线客服</button>
+</view>
+
+
+
