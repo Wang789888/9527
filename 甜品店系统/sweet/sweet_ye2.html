@@ -1,0 +1,168 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<script src="js/iconfont.js"></script>
+		<style>
+			.mui-slider .mui-slider-group .mui-slider-item > a:not(.mui-control-item) {
+	                width: 498px;
+	            }
+				img {
+	                border: 0;
+	                width: 100px;
+	            }
+				.mui-slider .mui-slider-group {
+	                font-size: 0;
+	                white-space: nowrap;
+	                width: 498px;
+	            }
+			    .mui-table-view {
+	                position: relative;
+	                margin-top: 0;
+	                margin-bottom: 0;
+	                padding-left: 0;
+	                list-style: none;
+	                background-color: transparent;
+	            }
+				
+				.icon {/* 小图标的样式 */
+					width: 1em;
+					height: 1em;
+					vertical-align: -0.15em;
+					fill: currentColor;
+					overflow: hidden;
+				}
+				img {
+	                border: 0;
+	                width: 498px;
+	            }
+				
+		
+			
+			</style>
+	</head>
+
+	<body>
+
+
+		<div class="mui-content">
+			<header class="mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">十二先生</h1>
+				<br /><br />
+			</header>
+			<br /><br />
+			<!-- 图片轮播 msl-->
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="upload/147.jpg" >
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="upload/17.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="upload/147.jpg">
+						</a>
+					</div>
+
+
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="upload/17.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+
+				</div>
+			</div>
+
+			<div style="background-color: white;margin: 1px 0px;" id="div_1">
+				<br>
+				<h4>【蛋糕】十二先生</h4>
+				<p>&nbsp;淡奶油（产地：法国）、 巧克力（产地：法国）、<br />
+					&nbsp;抹茶粉、红小豆（产地：国产)</p>
+				<p class="mui-ellipsis">&nbsp;提前1天预约</p>
+				<p class="mui-ellipsis">
+					<span style="color: red;font-weight: bold;">&nbsp;$188.00</span>&nbsp;门店价格：$209.00
+					<span class="mui-pull-right">售出：11&nbsp;</span>
+				</p>
+				<!-- 图片列表 mlist -->
+				<ul class="mui-table-view">
+					<br>
+					<a href="#">
+						<div class="mui-media-body">
+							<p class="mui-ellipsis">&nbsp;积分抵现&nbsp;&nbsp;&nbsp;&nbsp;品质保障&nbsp;&nbsp;&nbsp;&nbsp;正品保证&nbsp;&nbsp;&nbsp;&nbsp;不支持7天无理由退货</p>
+						</div>
+					</a>
+				</ul>
+				<br />
+				<p align="center">图文详情</p>
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-12" style="background-color: red;"></div>
+				<div class="mui-slider-group">
+					<img src="upload/137.jpg" />
+					<img src="upload/157.jpg" />
+					<img src="upload/167.jpg" />
+					<img src="upload/147.jpg" />
+					<img src="upload/177.jpg" />
+					<img src="upload/187.jpg" />
+					<img src="upload/197.jpg" />
+					<img src="upload/217.jpg" />
+				</div>
+				<p>备 注：<br />
+					1、蛋糕行业通用的是英制尺寸，描述所标的“寸”,都是指“英寸”，1英寸=2.54cm；如果描述中标注的是cm或磅，则以cm或磅为准；<br />
+					2、蛋糕乃手工制作产品，不同的糕点师对图片上花型的理解不同以及制作手工不同，另外受当地原料因素等原因影响，当某些材料、颜色及季节性水果缺乏时，我们会以相近的替代，收货人实际收到的产品可能与网页上看到的图片存在一些差异，所送蛋糕以实际配送的为准，不便之处，敬请谅解；<br />
+					3、蛋糕上的"生日快乐"，"Happy birthday"，"I LOVE YOU"等字样不做为蛋糕内容，如需裱字请另注明；<br />
+					4、凡当天配送的蛋糕，为当天制作，确保新鲜；蛋糕类产品请勿离开冷藏超过四小时(夏天高温时间不能超过两小时)；慕斯类产品请勿离开冷藏超过二小时(夏天高温时间不能超过一小时)；请在48小时之内食用完毕，未食用时请冷藏在零下5度冰柜中。
+				</p>
+
+
+				<div style="height: 300px;"></div>
+			</div>
+			<!--底部选项卡 mt-->
+			<nav class="mui-bar mui-bar-tab">
+				<a class="mui-tab-item mui-active" id="ye4gwc">
+					<span class="mui-icon" style="font-size: 27px;">
+						<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icon-diy "></use>
+						</svg>
+					</span>
+					<span class="mui-tab-label">立即订购</span>
+				</a>
+
+
+			</nav>
+
+
+			<script src="js/mui.js"></script>
+			<script type="text/javascript">
+				mui.init()
+				mui.plusReady(function() {
+					document.getElementById("ye4gwc").addEventListener("tap", function() {
+
+						mui.openWindow({
+							url: "sweet_ye4gwc.html",
+							id: "sweet_ye4gwc"
+						});
+					});
+				});
+			</script>
+	</body>
+
+</html>

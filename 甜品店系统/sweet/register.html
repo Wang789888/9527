@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+
+		<link rel="stylesheet" type="text/css" href="css/registLogin/util.css">
+		<link rel="stylesheet" type="text/css" href="css/registLogin/main.css">
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="h_1">填写注册信息</h1>
+		</header>
+		<!--输入mform按下回车键快速创建输入框-->
+		<div class="mui-content">
+			<form class="mui-input-group" id="uForm">
+				<div class="mui-input-row">
+					<label for="uname"><span class="red">*</span>昵称</label>
+					<input id='uname' name="uname" type="text" class="mui-input-clear mui-input" placeholder="昵称由数字/汉字/字母组成">
+				</div>
+				<div class="mui-input-row">
+					<label for="pwd"><span class="red">*</span>密码</label>
+					<input id='pwd' name="pwd" type="password" class="mui-input-clear mui-input" placeholder="密码不能低于6位">
+				</div>
+				<div class="mui-input-row" style="height: 50px;">
+					<label for="rpwd"><span class="red">*</span>确认密码</label>
+					<input id='rpwd' name="rpwd" type="password" class="mui-input-clear mui-input" placeholder="密码应与上方一致">
+				</div>
+				<div class="mui-input-row">
+					<label for="email"><span class="red">*</span>邮箱</label>
+					<input id='email' name="email" type="email" class="mui-input-clear mui-input" placeholder="请输入您的邮箱">
+				</div>
+				<div class="mui-input-row">
+					<label for="address"><span class="red">*</span>地址</label>
+					<input id='address' name="address" type="text" class="mui-input-clear mui-input" placeholder="国家名即可">
+				</div>
+				<div class="mui-input-row">
+					<label for="tel"><span class="red">*</span>电话</label>
+					<input id='tel' name="tel" type="text" class="mui-input-clear mui-input" placeholder="电话号码或手机号码">
+				</div>
+
+				<div class="mui-content-padded">
+					<button id='reg' type="submit" class="mui-btn mui-btn-block mui-btn-primary">立即注册</button>
+				</div>
+			</form>
+
+			<div class="mui-content-padded">
+				<p>*(注意：格式)</p>
+			</div>
+		</div>
+
+		<script src="js/mui.js"></script>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				/* 注册*/
+				var uForm = document.getElementById("uForm");
+				var uname = document.getElementById("uname");
+				var pwd = document.getElementById("pwd");
+				var rpwd = document.getElementById("rpwd");
+
+				var email = document.getElementById("email");
+				var address = document.getElementById("address");
+				var tel = document.getElementById("tel");
+
+				uForm.addEventListener("submit", function(e) {
+					//alert("jjjjj");
+					//判断
+					if (!app.isNotNull(uname.value)) {
+						uname.focus(); /* 获取焦点 */
+						app.showMessage("用户名不能为空！！！", "error");
+					} else if (!app.isNotNull(pwd.value)) {
+						pwd.focus(); /* 获取焦点 */
+						app.showMessage("密码不能为空QQ", "error");
+					} else {
+						//判断用户名和密码的长度限制 
+						if (uname.value.length > 12) {
+							app.showMessage("用户名不能超过12位", "error");
+							return false;
+						} else if (pwd.value.length < 6) {
+							app.showMessage("密码不能小于6位", "error");
+							return false;
+						} else if (pwd.value != rpwd.value) {
+							app.showMessage("两次密码不一致！！", "error");
+							return false;
+						}
+
+
+						mui.ajax(app.serverUrl + '/user/register', {
+							data: {
+								uname: uname.value,
+								pwd: pwd.value,
+								email: email.value,
+								address: address.value,
+								tel: tel.value
+							},
+							dataType: 'json', //服务器返回json格式数据
+							type: 'post', //HTTP请求类型
+							timeout: 10000, //超时时间设置为10秒；
+							headers: {
+								'Content-Type': 'application/json'
+							}, //请求头信息
+							success: function(data) {
+								// alert(JSON.stringify(data));
+								if (data.status == 200) {
+									//页面跳转
+									mui.openWindow("login.html", "login");
+								} else {
+									app.showMessage(data.msg, "error");
+								}
+							},
+							error: function() {
+								// alert("fail");
+							}
+						});
+					}
+					//阻止默认提交表单
+					e.preventDefault();
+				});
+
+
+			});
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	<script src="js/iconfont.js"></script>
+			<style>
+				.icon {/* 小图标的样式 */
+					width: 1em;
+					height: 1em;
+					vertical-align: -0.15em;
+					fill: currentColor;
+					overflow: hidden;
+				}
+				.mui-table-view .mui-media-object {
+	                max-width: 72px;
+	                height: 62px;
+	            }
+			</style>
+		</head>
+	
+		<body>
+			<div class="mui-content">
+				<header class="mui-bar mui-bar-nav">
+					<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+					<h1 class="mui-title">加入购物车</h1>
+				</header>
+				<br /><br />
+				<!-- 图片列表 mlist -->
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-media">
+						<a href="javascript:;">
+							<img class="mui-media-object mui-pull-left" src="upload/31.jpg">
+							<div class="mui-media-body">
+								【零食糕点】青森芝士条<br><br>
+								<p class="mui-ellipsis">
+									<span style="color: red;font-weight: bold;">$80.00</span>&nbsp;门店价格：$80.00
+	
+								</p>
+							</div>
+						</a>
+					</li>
+					<p>&nbsp;尺寸</p>
+					<div class="mui-input-row mui-radio">
+						<label>巧克力味</label>
+						<input name="radio1" type="radio">
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label>抹茶味</label>
+						<input name="radio1" type="radio">
+					</div>
+					<div class="mui-input-row mui-radio">
+						<label>草莓味</label>
+						<input name="radio1" type="radio">
+					</div>
+					
+					<p>&nbsp;购买数量</p>
+					<div class="mui-numbox" data-numbox-min=1>
+						<!-- "-"按钮，点击可减小当前数值 -->
+						<button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+						<input class="mui-numbox-input" type="number" />
+						<!-- "+"按钮，点击可增大当前数值 -->
+						<button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+					</div>
+	
+					<nav class="mui-bar mui-bar-tab">
+	
+						<a class="mui-tab-item mui-active" id="ye5gwc">
+							<span class="mui-icon" style="font-size: 27px;">
+								<svg class="icon" aria-hidden="true">
+									<use xlink:href="#icon-diy "></use>
+								</svg>
+							</span>
+							<span class="mui-tab-label">立即订购</span>
+						</a>
+	
+	
+					</nav>
+					<script src="js/mui.js"></script>
+					<script type="text/javascript">
+						mui.init()
+					</script>
+		</body>
+	
+	</html>

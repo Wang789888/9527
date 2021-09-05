@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style type="text/css">
+			html {
+				font-size: 100px;
+			}
+
+			body,
+			a,
+			ul,
+			li {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				text-decoration: none;
+			}
+
+			body {
+				background: rgb(240, 240, 240);
+				font-family: .PingFangSC-Regular;
+			}
+
+			div {
+				box-sizing: border-box;
+			}
+
+
+			.nav {
+
+				height: 0.44rem;
+				background: white;
+				font-size: 0.12rem;
+				line-height: 0.44rem;
+				padding-left: 0.28rem;
+			}
+
+
+
+			.content {
+				margin-top: 1px;
+			}
+
+			.cell1 {
+				height: 1.59rem;
+				background: white;
+				font-size: 0.12rem;
+				margin-top: 0.13rem;
+			}
+
+			.element.style {
+				height: 70px;
+				width: 130px;
+			}
+			.title {
+				height: 0.22rem;
+				border-bottom: 1px solid #D8D8D8;
+				padding-left: 0.12rem;
+				padding-right: 0.12rem;
+			}
+
+			.title>span {
+				float: right;
+				font-size: 0.09rem;
+				color: #A4A3A3;
+			}
+
+			.cell {
+				height: 0.96rem;
+				background: white;
+				border-bottom: 1px solid #D8D8D8;
+				padding: 0.12rem 0;
+			}
+
+			.cell>.img {
+				width: 100px;
+				height: 80px;
+				float: left;
+				margin-left: 0.12rem;
+			}
+
+
+			.cell>.text {
+				width: 2.12rem;
+				margin-right: 0.12rem;
+				float: right
+			}
+
+			.cell>.text>span {
+				display: block;
+			}
+
+			.cell .intro {
+				font-size: 0.1rem;
+				color: #A4A3A3;
+			}
+
+			.cell .spay {
+				font-size: 0.09rem;
+				color: #A4A3A3;
+			}
+
+			.cell .pay {
+				color: #26A69A;
+				font-size: 0.1rem;
+			}
+
+			.footer {
+				height: 0.32rem;
+				padding: 0.1rem;
+				text-align: center;
+			}
+
+			.footer>.btn {
+				float: right;
+			}
+
+			.option {
+				width: 0.65rem;
+				border: 1px solid #26A69A;
+				border-radius: 2px;
+				float: left;
+				margin-left: 0.07rem;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的订单</h1>
+		</header>
+		<div class="mui-content">
+			<!-- 顶部选项卡  -->
+			<div class="mui-slider">
+				<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+					<a class="mui-control-item" href="item1">全部</a>
+					<a class="mui-control-item" href="#item2">已付款</a>
+					<a class="mui-control-item" href="#item3">未付款</a>
+					<a class="mui-control-item" href="#item4">待收货</a>
+				</div>
+				<!-- 下面线 -->
+				<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-3" style="background-color: red;"></div>
+				<div class="mui-slider-group">
+					<div id="item1" class="mui-slider-item mui-control-content mui-active">
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<div class="content">
+								<div class="cell1">
+									<div class="title">
+										草莓芝士蛋糕<span>交易成功</span>
+									</div>
+									<div class="cell">
+										<div class="text">
+											<div class="brand">草莓芝士蛋糕</div>
+											<span class="intro">浓浓的奶香，配上新鲜的草莓🍓</span>
+											<span class="spay">应付账款￥330.090</span>
+											<span class="pay">实际付款：￥330.000</span>
+										</div>
+										<div class="img"><img src="upload/21.jpg"  /></div>
+									</div>
+									<div class="footer">
+										<div class="btn">
+											<div class="option">
+												删除订单
+											</div>
+											<div class="option">
+												订单详情
+											</div>
+											<div class="option">
+												立即评价
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>				
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<div class="content">
+								<div class="cell1">
+									<div class="title">
+										草莓芝士蛋糕<span>交易成功</span>
+									</div>
+									<div class="cell">
+										<div class="text">
+											<div class="brand">草莓芝士蛋糕</div>
+											<span class="intro">浓浓的奶香，配上新鲜的草莓🍓</span>
+											<span class="spay">应付账款￥330.090</span>
+											<span class="pay">实际付款：￥330.000</span>
+										</div>
+										<div class="img"><img src="upload/3.jpg"  /></div>
+									</div>
+									<div class="footer">
+										<div class="btn">
+											<div class="option">
+												删除订单
+											</div>
+											<div class="option">
+											     订单详情
+											</div>
+											<div class="option">
+												立即评价
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>											
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<div class="content">
+								<div class="cell1">
+									<div class="title">
+										北海道芝士牧场<span>交易成功</span>
+									</div>
+									<div class="cell">
+										<div class="text">
+											<div class="brand">北海道芝士牧场</div>
+											<span class="intro">浓浓的奶香，配上新鲜的草莓🍓</span>
+											<span class="spay">应付账款￥330.090</span>
+											<span class="pay">实际付款：￥330.000</span>
+										</div>
+										<div class="img"><img src="upload/30.jpg" /></div>
+									</div>
+									<div class="footer">
+										<div class="btn">
+											<div class="option">
+												删除订单
+											</div>
+											<div class="option">
+												订单详情
+											</div>
+											<div class="option">
+												立即评价
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					
+						<ul class="mui-table-view mui-grid-view mui-grid-9">
+							<div class="content">
+								<div class="cell1">
+									<div class="title">
+										半熟芝士冰淇淋<span>交易成功</span>
+									</div>
+									<div class="cell">
+										<div class="text">
+											<div class="brand">半熟芝士冰淇淋</div>
+											<span class="intro">浓浓的奶香，配上新鲜的草莓🍓</span>
+											<span class="spay">应付账款￥330.090</span>
+											<span class="pay">实际付款：￥330.000</span>
+										</div>
+										<div class="img"><img src="upload/38.jpg"  /></div>
+									</div>
+									<div class="footer">
+										<div class="btn">
+											<div class="option">
+												删除订单
+											</div>
+											<div class="option">
+												订单详情
+											</div>
+											<div class="option">
+												立即评价
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					</div>   
+			<div id="item2" class="mui-slider-item mui-control-content">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">第2个选项卡子项</li>
+					<li class="mui-table-view-cell">第2个选项卡子项</li>
+				</ul>
+			</div>
+			<div id="item3" class="mui-slider-item mui-control-content">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">第3个选项卡子项</li>
+					<li class="mui-table-view-cell">第3个选项卡子项</li>
+				</ul>
+			</div>
+			<div id="item4" class="mui-slider-item mui-control-content">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">第4个选项卡子项</li>
+					<li class="mui-table-view-cell">第4个选项卡子项</li>
+				</ul>
+			</div>
+
+		</div>
+		</div>
+		</div>
+		</div>
+
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sweet.dao.UserDao">
+
+    <!--<resultMap id="userMap" type="cn.sweet.entity.User">-->
+        <!--<id property="uid" column="uid" javaType="int"/>-->
+        <!--<result property="uname" column="uname" javaType="String"/>-->
+        <!--<result property="pwd" column="pwd" javaType="String"/>-->
+        <!--<result property="email" column="email" javaType="String"/>-->
+        <!--<result property="address" column="address" javaType="String"/>-->
+        <!--<result property="tel" column="tel" javaType="String"/>-->
+        <!--<result property="rid" column="rid" javaType="int"/>-->
+    <!--</resultMap>-->
+
+    <!--登录 -->
+    <select id="findUserByName" resultType="cn.sweet.entity.User">
+        select * from tab_user
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="name != null and name != ''">
+                and uname = #{name}
+            </if>
+        </trim>
+    </select>
+
+    <!--注册-->
+    <insert id="addUser" parameterType="cn.sweet.entity.User">
+        insert into tab_user values(null,#{uname},#{pwd},#{email},#{address},
+        #{tel},2)
+    </insert>
+
+    <!--后台 获取总记录--> <!--trim 返回字符串的副本，忽略前导空白和尾部空白-->
+    <select id="pageCount" resultType="long" parameterType="string">
+        select count(*) from tab_user
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="uname != null and uname != ''">
+                and uname like '%${uname}%'
+            </if>
+        </trim>
+    </select>
+
+    <!--获取分页查询-->
+    <select id="pageQuery" parameterType="string" resultType="cn.sweet.entity.User">
+        select * from tab_user
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="uname != null and uname != ''">
+                and uname like '%${uname}%'
+            </if>
+        </trim>
+        limit #{start},#{end}
+    </select>
+
+    <!--删除-->
+    <delete id="deleteUser" parameterType="int">
+        delete from tab_user where uid=#{uid}
+    </delete>
+
+</mapper>

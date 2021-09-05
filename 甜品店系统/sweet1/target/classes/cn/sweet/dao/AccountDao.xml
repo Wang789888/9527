@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.sweet.dao.AccountDao">
+
+    <select id="findAll" resultType="cn.sweet.entity.Account">
+        select * from account
+    </select>
+
+    <select id="findByName" resultType="cn.sweet.entity.Account" parameterType="string">
+        select * from account
+        <trim prefix="where" prefixOverrides="and|or">
+            <if test="backName != null and backName != ''">
+                and backName = #{backName}
+            </if>
+        </trim>
+    </select>
+
+</mapper>

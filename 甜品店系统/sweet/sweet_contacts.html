@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<style>
+
+		</style>
+	</head>
+	<body>
+
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">联系人</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view" id="list">
+				<!-- <li class="mui-table-view-cell" id="mode">
+					
+				</li> -->
+			</ul>
+		</div>
+		<script src="js/mui.min.js"></script>
+
+		<script type="text/javascript">
+			mui.init();
+
+			function tell(num) {
+				plus.device.dial(num); //打电话
+			}
+			mui.plusReady(function () {
+				plus.contacts.getAddressBook(plus.contacts.ADDRESSBOOK_PHONE,function(addressbook){
+					addressbook.find(["displayName", "phoneNumbers"],function(data){
+						var str = "";
+						for(var i=0;i< data.length;i++){
+							//判断
+							if(data[i].phoneNumbers.length == 0){
+								continue;
+							}
+							//联系人
+							var user = data[i].displayName;
+							//手机号
+							var phone = data[i].phoneNumbers[0].value;
+							//拼字符串
+							str +=  '<li class="mui-table-view-cell" onclick="tell('+phone+')">'+user+' : '+phone+'</li>'
+						}
+						document.getElementById("list").innerHTML=str;
+						
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

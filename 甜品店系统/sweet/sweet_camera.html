@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">拍照</h1>
+		</header>
+		
+		<div class="mui-content">
+			<img  src="upload/gg1.jpg" width="100px" id="img" />
+		</div>
+		
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var imgpath = document.getElementById("img");//位置
+			mui.plusReady(function () {
+			    
+				var img = plus.camera.getCamera(1);//得到一个摄像头(1为主，2为辅)
+				
+				img.captureImage(function(path){//拍照成功后的回调  , path 地址
+					
+					plus.io.resolveLocalFileSystemURL(path,function(entity){
+						var img_name = entity.name;//获取图片的名称
+						var img_path = entity.toLocalURL();//获取图片的地址
+						
+						imgpath.src = img_path;//设置图片路径
+						alert("---->"+img_name);
+					});
+					
+				});
+				
+				
+			});
+			
+			
+			
+		</script>
+	</body>
+
+</html>

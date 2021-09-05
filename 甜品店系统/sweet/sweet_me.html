@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<script src="js/iconfont2.js"></script>
+		<style>
+			.icon {/* 小图标的样式 */
+				width: 1em;
+				height: 1em;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+			.my-touxiang{
+				position: absolute;
+				top: 50px;
+				left: 20px;
+			    border-radius:30px; 
+				width: 150px;
+				height: 100px;
+				background-color: #0062CC;
+	        }
+		</style>
+	</head>
+
+	<body>
+
+		<header class="mui-bar mui-bar-nav home-nav" >
+			<h1 class="mui-title">我的</h1>
+		</header>
+		<div class="mui-content">
+			<!--输入mlist按下回车键快速创建列表-->
+			<div class="home-list-div public-list-txt">
+				<ul class="mui-table-view">
+					<div class="my-top">
+				       <img  style="width: 100%; height: 200px;" />
+				       <img  class="my-touxiang" src="css/registLogin/admin.jpg" />
+					   <div id="me" style="position: absolute;left: 200px;top: 120px; font-size: 30px; color: black;">
+				        <p >小仙女</p>
+					   </div>
+			       </div>
+					<li class="mui-table-view-cell" id="shopping">
+						<a class="mui-tab-item mui-active" href="sweet_index.html">
+							<span class="mui-icon" style="font-size: 20px;">
+							<svg class="icon" aria-hidden="true">
+							<use xlink:href="#icongouwuche"></use>
+							</svg>
+							</span>
+							<span class="mui-tab-label">购物车</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell" id="detail">
+						<a class="mui-tab-item mui-active" href="sweet_index.html">
+							<span class="mui-icon" style="font-size: 20px;">
+							<svg class="icon" aria-hidden="true">
+							<use xlink:href="#iconicon-xiangqing"></use>
+							</svg>
+							</span>
+							<span class="mui-tab-label">订单详情</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell" id="ye3fw">
+						<a class="mui-tab-item mui-active" href="sweet_index.html" >
+							<span class="mui-icon" style="font-size: 20px;">
+							<svg class="icon" aria-hidden="true">
+							<use xlink:href="#iconxiaolian"></use>
+							</svg>
+							</span>
+							<span class="mui-tab-label">服务承诺</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell">
+						<a class="mui-tab-item mui-active" href="sweet_index.html">
+							<span class="mui-icon" style="font-size: 20px;">
+							<svg class="icon" aria-hidden="true">
+							<use xlink:href="#iconjinjilianxiren"></use>
+							</svg>
+							</span>
+							<span class="mui-tab-label">联系客服</span>
+						</a>
+					</li>
+					<li class="mui-table-view-cell"  id="register">
+						<a class="mui-tab-item mui-active" href="sweet_index.html">
+							<span class="mui-icon" style="font-size: 20px;">
+							<svg class="icon" aria-hidden="true">
+							<use xlink:href="#iconzhuce-shenhe"></use>
+							</svg>
+							</span>
+							<span class="mui-tab-label">注册</span>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript" src="js/app.js"></script>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				
+				document.getElementById("register").addEventListener("tap", function() {
+					mui.openWindow({
+						url: "register.html",
+						id: "register",
+					});
+				});
+				/* 获取对象信息 */
+				var user = app.getUserGlobalInfo();
+				//alert(user.uname);
+				
+				var me = document.getElementById("me");
+				if(app.isNotNull(user)){/* 不能为空 */
+					me.innerHTML = "<font >当前用户："+user.uname+"</font>"
+				}
+				
+				var contacts = document.getElementById("shopping");
+				//我的订单事件
+				contacts.addEventListener("tap", function() {
+					mui.openWindow({
+						url: "sweet_shopping.html",
+						id: "sweet_shopping"
+					});
+				});
+				var contacts = document.getElementById("detail");
+				//订单详情事件
+				contacts.addEventListener("tap", function() {
+					mui.openWindow({
+						url: "sweet_detail.html",
+						id: "sweet_detail"
+					});
+				});
+				var contacts = document.getElementById("ye3fw");
+				//订单详情事件
+				contacts.addEventListener("tap", function() {
+				 mui.openWindow({
+				  url: "sweet_ye3fw.html",
+				  id: "sweet_ye3fw"
+				 });
+				});
+		
+			});
+		</script>
+	</body>
+</html>

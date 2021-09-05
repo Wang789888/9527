@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<script src="js/iconfont.js"></script>
+		<style>
+			/* 设置内边距 */
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell{
+				padding: 0px;
+			}
+			/* 设置图标大小 */
+			.mui-grid-view.mui-grid-9 .mui-media .mui-icon{
+				font-size: 25px;
+			}
+			/* 设置字体大小 */
+			.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body{
+				font-size: 12px;
+			}
+			/* 商品系列 */
+			#div_1 .mui-grid-view.mui-grid-9{
+				background-color: white;
+				
+			}
+			.mui-slider .mui-slider-group .mui-slider-item {
+				height: 150px;
+			}
+			
+			/* 零食糕点 */
+			 #div_6 .mui-table-view .mui-media-object.mui-pull-left{
+				width: 100px ;
+				height: 50px;
+			} 
+			.mui-grid-view.mui-grid-9 .mui-table-view-cell > a:not(.mui-btn){
+				height: 100px;
+			}
+			
+			
+			.icon {/* 小图标的样式 */
+					width: 2em;
+					height: 2em;
+					vertical-align: -0.15em;
+					fill: currentColor;
+					overflow: hidden;
+			}
+			
+			 
+		</style>
+	</head>
+
+	<body>
+		<!--主体 mod-->
+		<div class="mui-content">
+			<div id="slider" class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="upload/8.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="upload/29.jpg" />
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="upload/4.jpg">
+						</a>
+					</div>
+					<!-- 第三张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="upload/5.jpg">
+						</a>
+					</div>
+					<!-- 第四张 -->
+					<div class="mui-slider-item">
+						<a href="#">
+							<img src="upload/8.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#">
+							<img src="upload/29.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+
+
+			<!--九宫格  mg-->
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a class="mui-tab-item mui-active" href="sweet_index.html">
+						<span class="mui-icon" style="font-size: 20px;">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="#icon-food-cake"></use>
+							</svg>
+						</span><br /><br />
+						<span class="mui-tab-label">蛋糕系列</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a class="mui-tab-item mui-active" href="sweet_index.html">
+						<span class="mui-icon" style="font-size: 20px;">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="#icon-food-bread"></use>
+							</svg>
+						</span><br /><br />
+						<span class="mui-tab-label">面包系列</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a class="mui-tab-item mui-active" href="sweet_index.html">
+						<span class="mui-icon" style="font-size: 20px;">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="#icon-tianpinyinliao"></use>
+							</svg>
+						</span><br /><br />
+						<span class="mui-tab-label">零食糕点</span>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a class="mui-tab-item mui-active" href="sweet_index.html">
+						<span class="mui-icon" style="font-size: 20px;">
+							<svg class="icon" aria-hidden="true">
+								<use xlink:href="#icon-personal"></use>
+							</svg>
+						</span><br /><br />
+						<span class="mui-tab-label">联系我们</span>
+					</a>
+				</li>
+			</ul>
+
+			<!--蛋糕系列  九宫格 mg -->
+			<div style="background-color: white;margin: 5px 0px;" id="div_1">
+				<div style="padding: 10px 10px;">
+					<span class="mui-pull-left" style="font-size: 13px;">蛋糕系列</span>
+					<span class="mui-pull-left" style="font-size: 13px;color: pink;font-style:italic;font-weight: bold">/Cake</span>
+					<span class="mui-pull-right" style="font-size: 12px;color: gray;">
+						<a>更多&gt</a>
+					</span>
+				</div>
+				<br>
+				<ul class="mui-table-view mui-grid-view mui-grid-9">
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+						<a href="#">
+							<img src="upload/17.jpg" width="93%" style="border-radius: 5%;" />
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+						<a href="#">
+							<img src="upload/21.jpg" width="93%" style="border-radius: 5%;" />
+						</a>
+					</li>
+					<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+						<a href="#">
+							<img src="upload/15.jpg" width="93%" style="border-radius: 5%;" />
+						</a>
+					</li>
+				</ul>
+
+				<!-- 面包系列  九宫格 mg -->
+				<div style="background-color: white;margin: 5px 0px;" id="div_1">
+					<div style="padding: 10px 10px;">
+						<span class="mui-pull-left" style="font-size: 13px;">面包系列</span>
+						<span class="mui-pull-left" style="font-size: 13px;color: pink;font-style:italic;font-weight: bold">/Bread</span>
+						<span class="mui-pull-right" style="font-size: 12px;color: gray;">
+							<a>更多&gt</a>
+						</span>
+					</div>
+					<br>
+					<ul class="mui-table-view mui-grid-view mui-grid-9">
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							<a href="#">
+								<img src="upload/1.jpg" width="93%" height="100%" style="border-radius: 5%;" />
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							<a href="#">
+								<img src="upload/2.1.jpg" width="93%" height="100%" style="border-radius: 5%;" />
+							</a>
+						</li>
+						<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+							<a href="#">
+								<img src="upload/3.jpg" width="93%" height="100%" style="border-radius: 5%;" />
+							</a>
+						</li>
+					</ul >
+						<!-- 图片列表 mlist -->
+					<div style="background-color: white;margin: 5px 0px;" id="div_6">
+						<div style="padding: 10px 10px;">
+							<span class="mui-pull-left" style="font-size: 13px;font-style:italic">零食糕点</span>
+							<span class="mui-pull-left" style="font-size: 13px;color: pink;font-style:italic;font-weight: bold">/Snack</span>
+							<span class="mui-pull-right" style="font-size: 12px;color: gray;">
+								<a>更多&gt</a>
+							</span>
+						</div>
+						<br><!-- 图片列表 mlist -->
+						<ul class="mui-table-view" id="list">
+							<!-- <li class="mui-table-view-cell mui-media" id="ye1">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="upload/31%200.jpg">
+									<div class="mui-media-body">
+										青森芝士条<br><br>
+										<p class="mui-ellipsis">周一至周日|提前3天预约</p>
+										<p class="mui-ellipsis">
+											<span style="color: red;font-weight: bold;">$80</span>&nbsp;&nbsp;门店价格：$80.00
+											<span class="mui-pull-right">售出：7</span>
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="upload/33%200.jpg">
+									<div class="mui-media-body">
+										半数芝士挞<br><br>
+										<p class="mui-ellipsis">周一至周日|提前3天预约</p>
+										<p class="mui-ellipsis">
+											<span style="color: red;font-weight: bold;">$10</span>&nbsp;&nbsp;门店价格：$80.00
+											<span class="mui-pull-right">售出：7</span>
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="upload/35%200.jpg">
+									<div class="mui-media-body">
+										甜霜<br><br>
+										<p class="mui-ellipsis">周一至周日|提前3天预约</p>
+										<p class="mui-ellipsis">
+											<span style="color: red;font-weight: bold;">$30</span>&nbsp;&nbsp;门店价格：$80.00
+											<span class="mui-pull-right">售出：7</span>
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="upload/36%200.jpg">
+									<div class="mui-media-body">
+										甜心花生芝麻<br><br>
+										<p class="mui-ellipsis">周一至周日|提前3天预约</p>
+										<p class="mui-ellipsis">
+											<span style="color: red;font-weight: bold;">$60</span>&nbsp;&nbsp;门店价格：$80.00
+											<span class="mui-pull-right">售出：7</span>
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="upload/38%200.jpg">
+									<div class="mui-media-body">
+										半熟芝士冰淇淋<br><br>
+										<p class="mui-ellipsis">周一至周日|提前3天预约</p>
+										<p class="mui-ellipsis">
+											<span style="color: red;font-weight: bold;">$139</span>&nbsp;&nbsp;门店价格：$80.00
+											<span class="mui-pull-right">售出：7</span>
+										</p>
+									</div>
+								</a>
+							</li>
+							<li class="mui-table-view-cell mui-media">
+								<a href="javascript:;">
+									<img class="mui-media-object mui-pull-left" src="upload/39%200.jpg">
+									<div class="mui-media-body">
+										生巧克力<br><br>
+										<p class="mui-ellipsis">周一至周日|提前3天预约</p>
+										<p class="mui-ellipsis">
+											<span style="color: red;font-weight: bold;">$66</span>&nbsp;&nbsp;门店价格：$80.00
+											<span class="mui-pull-right">售出：7</span>
+										</p>
+									</div>
+								</a>
+							</li> -->
+
+						</ul>
+					</div>
+
+
+
+
+				</div>
+
+				<script src="js/mui.js"></script>
+				<script type="text/javascript" src="js/app.js"></script>
+				<script type="text/javascript">
+					mui.init();
+					//获得slider插件对象
+					var gallery = mui('.mui-slider');
+					gallery.slider({
+						interval: 1000 //自动轮播周期，若为0则不自动播放，默认为0；
+					});
+
+					//加载零食糕点信息
+					mui.plusReady(function() {
+						
+
+						mui.ajax(app.serverUrl + '/snack/list', {
+							dataType: 'json', //服务器返回json格式数据
+							type: 'post', //HTTP请求类型
+							headers: {
+								'Content-Type': 'application/json'
+							},
+							success: function(data) {
+
+								//alert(data.data);
+								//console.log(JSON.stringify(data.data));
+								if (data.status == 200) {
+									var jsonStr = data.data;
+									var str = "";
+									for (var i = 0; i < jsonStr.length; i++) {
+
+										str += '<li class="mui-table-view-cell mui-media">' +
+											'<a href="javascript:;">' +
+											'<img class="mui-media-object mui-pull-left" src="upload/' + jsonStr[i].imgPath + '">' +
+											'<div class="mui-media-body">' +
+											jsonStr[i].title + '<br><br>' +
+											'<p class="mui-ellipsis">提前3天预约|不支持7天无理由退换货</p>' +
+											'<p class="mui-ellipsis">' +
+											'<span style="color: red;font-weight: bold;">$' + jsonStr[i].beforePrice +
+											'</span>&nbsp;门店价格：$' + jsonStr[i].afterPrice +
+											'<span class="mui-pull-right">售出：' + jsonStr[i].saleNum + '</span>' +
+											'</p>' +
+											'</div>' +
+											'</a>' +
+											'</li>';
+									}
+									//将str的结果嵌入到页面中
+									document.getElementById("list").innerHTML = str;
+								} else {
+									app.showMessage(data.msg, "error");
+								}
+
+
+							},
+							error: function() {
+								alert("fail");
+							}
+						});
+					});
+				</script>
+	</body>
+
+</html>
